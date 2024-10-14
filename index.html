@@ -5,30 +5,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Baking with the Gemini API</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <main>
-    <h1>Chat with the Gemini API</h1>
+    <h1>Baking with the Gemini API</h1>
     <form>
-
       <div class="image-picker">
         <label class="image-choice">
-
-          <input type="file" name="image-upload" id="image-upload" accept="image/*">
-          <img class="image-preview" src="" alt="Select Image">
-
-
-          <!-- <input type="radio" checked name="chosen-image" value="https://images.unsplash.com/photo-1525498128493-380d1990a112">
-          <img src="https://images.unsplash.com/photo-1525498128493-380d1990a112"> -->
+          <input type="radio" checked name="chosen-image" value="https://images.unsplash.com/photo-1525498128493-380d1990a112">
+          <img src="https://images.unsplash.com/photo-1525498128493-380d1990a112">
         </label>
-        
+        <label class="image-choice">
+          <input type="radio" name="chosen-image" value="/baked_goods_2.jpg">
+          <img src="/baked_goods_2.jpg">
+        </label>
+        <label class="image-choice">
+          <input type="radio" name="chosen-image" value="/baked_goods_3.jpg">
+          <img src="/baked_goods_3.jpg">
+        </label>
       </div>
       <div class="prompt-box">
         <label>
           <input name="prompt" placeholder="Enter instructions here" type="text"
-            value="">
+            value="Provide an example recipe for the baked goods in the image">
         </label>
         <button type="submit">Go</button>
       </div>
