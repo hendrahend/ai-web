@@ -3,13 +3,12 @@ import Base64 from 'base64-js';
 import MarkdownIt from 'markdown-it';
 import { maybeShowApiKeyBanner } from './gemini-api-banner';
 import './style.css';
-import 'dotenv/config';
 
 // 🔥🔥 FILL THIS OUT FIRST! 🔥🔥
 // Get your Gemini API key by:
 // - Selecting "Add Gemini API" in the "Project IDX" panel in the sidebar
 // - Or by visiting https://g.co/ai/idxGetGeminiKey
-let API_KEY = process.env.API_KEY;
+let API_KEY = 'AIzaSyAsQNvBCvPaXDZMCqQ5Vg6Cw1J_Eapx1UI';
 
 let form = document.querySelector('form');
 let promptInput = document.querySelector('input[name="prompt"]');
