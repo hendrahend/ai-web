@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baking with the Gemini API</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <h1>Chat with the Gemini API</h1>
+    <form>
+
+      <div class="image-picker">
+        <label class="image-choice">
+
+          <input type="file" name="image-upload" id="image-upload" accept="image/*">
+          <img class="image-preview" src="" alt="Select Image">
+
+
+          <!-- <input type="radio" checked name="chosen-image" value="https://images.unsplash.com/photo-1525498128493-380d1990a112">
+          <img src="https://images.unsplash.com/photo-1525498128493-380d1990a112"> -->
+        </label>
+        
+      </div>
+      <div class="prompt-box">
+        <label>
+          <input name="prompt" placeholder="Enter instructions here" type="text"
+            value="">
+        </label>
+        <button type="submit">Go</button>
+      </div>
+    </form>
+    <p class="output">(Results will appear here)</p>
+  </main>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
