@@ -15,46 +15,17 @@ let form = document.querySelector('form');
 let promptInput = document.querySelector('input[name="prompt"]');
 let output = document.querySelector('.output');
 
-const imageInput = document.querySelector('input[type="file"]');
-const imagePreview = document.querySelector('.image-preview');
-
-imageInput.addEventListener('change', (event) => {
-  const file = event.target.files[0];
-
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      imagePreview.src = e.target.result;
-    };
-    reader.readAsDataURL(file);
-  }
-});
-
 form.onsubmit = async (ev) => {
   ev.preventDefault();
   output.textContent = 'Generating...';
 
   try {
     // Load the image as a base64 string
-    // let imageUrl = form.elements.namedItem('chosen-image').value;
-    // let imageBase64 = await fetch(imageUrl)
-    //   .then(r => r.arrayBuffer())
-    //   .then(a => Base64.fromByteArray(new Uint8Array(a)));
+    let imageUrl = form.elements.namedItem('chosen-image').value;
+    let imageBase64 = await fetch(imageUrl)
+      .then(r => r.arrayBuffer())
+      .then(a => Base64.fromByteArray(new Uint8Array(a)));
 
-    const imageFile = imageInput.files[0];
-
-    // Convert the image to base64
-    let imageBase64 = await new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const base64Data = reader.result.split(',')[1];
-        resolve(base64Data);
-
-      };
-      reader.onerror = reject;
-      reader.readAsDataURL(imageFile);
-    });
-    
     // Assemble the prompt by combining the text with the chosen image
     let contents = [
       {
